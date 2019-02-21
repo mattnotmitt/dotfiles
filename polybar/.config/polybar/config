@@ -37,15 +37,15 @@
 [bar/base]
 	monitor  = eDP-1
 	dpi      = 288
-	width    = 3810
+	width    = 3840
 	height   = 50
-	offset-x = 15
-	offset-y = 15
+	offset-x = 0
+	offset-y = 0
 	
 	#tray-position = right
 	#tray-maxsize = 40
 	#tray-background = ${colors.bar_fg}
-	bottom = false	
+	bottom = true	
 	
 	background = ${colors.bar_bg}
 	foreground = ${colors.bar_fg}
@@ -391,7 +391,7 @@
 	wrapping-scroll = false
 	strip-wsnumbers = true
 	ws-icon-0 = music;
-	ws-icon-1 = firefox;
+	ws-icon-1 = firefox;
 	ws-icon-2 = discord;
 	ws-icon-3 = term;
 	ws-icon-4 = code;
