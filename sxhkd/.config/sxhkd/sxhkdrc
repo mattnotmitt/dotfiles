@@ -144,7 +144,7 @@ XF86AudioMute
 	amixer set Master 1+ toggle > /dev/null
 
 XF86AudioPlay
-	~/scripts/popup/music.sh pause
+	~/.scripts/popup/music.sh pause
 
 XF86AudioNext
 	playerctl next
@@ -156,7 +156,7 @@ XF86AudioPrev
 # Scripts
 #
 super + shift + b
-	~/scripts/popup/bat.sh
+	~/.scripts/popup/bat.sh
 
 super + shift + i
 	betterlockscreen -l dimblur -t "$(fortune -s -n 21)"
