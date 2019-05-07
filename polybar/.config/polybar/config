@@ -35,11 +35,11 @@
 ;--------------------------------------------
 
 [bar/base]
-	monitor  = eDP-1
-	dpi      = 288
-	width    = 3830
-	height   = 50
-	offset-x = 5
+	monitor  = DP-0
+	dpi      = 110
+	width    = 1920
+	height   = 25
+	offset-x = 760
 	offset-y = 5
 	
 	#tray-position = right
@@ -50,8 +50,8 @@
 	background = ${colors.bar_bg}
 	foreground = ${colors.bar_fg}
 
-	border-top-size     = 15
-	border-bottom-size  = 15
+	border-top-size     = 5
+	border-bottom-size  = 5
 	border-top-color    = ${colors.bar_bg}
 	border-bottom-color = ${colors.bar_bg}
 
@@ -62,14 +62,14 @@
 	module-margin-left = 2
 
 	font-N = <fontconfig pattern>;<vertical offset>
-	font-0 = Operator Mono Medium:pixelsize=9;5
-	font-2 = Font Awesome 5 Brands Regular:pixelsize=10;6
-	font-3 = Font Awesome 5 Pro Regular:pixelsize=8;6
-	font-1 = Noto Sans Mono CJK JP Regular:pixelsize=9;6
+	font-0 = IBM Plex Mono Medium:pixelsize=10;3
+	font-2 = Font Awesome 5 Brands Regular:pixelsize=11;3
+	font-3 = Font Awesome 5 Pro Regular:pixelsize=11;3
+	font-1 = Noto Sans Mono CJK JP Regular:pixelsize=10;3
 
-	modules-left   = workspaces spotify pulseaudio
-	;modules-center = xwindow
-	modules-right  = backlight essid battery date
+	modules-left   = workspaces 
+	modules-center = spotify
+	modules-right  = essid pulseaudio date
 
 	fixed-center = false
 	override-redirect = false

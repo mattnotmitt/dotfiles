@@ -6,7 +6,7 @@ icon=""
 
 player_status=$(playerctl status 2> /dev/null)
 if [[ $? -eq 0 ]]; then
-    metadata="$(playerctl metadata title 2> /dev/null| awk '{if (length($0) > 20) {print substr($0, 0, 21)"…"} else print $0}') - $(playerctl metadata artist 2> /dev/null | awk '{if (length($0) > 20) {print substr($0, 0, 21)"…"} else print $0}')"
+    metadata="$(playerctl metadata title 2> /dev/null| awk '{if (length($0) > 30) {print substr($0, 0, 31)"…"} else print $0}') - $(playerctl metadata artist 2> /dev/null | awk '{if (length($0) > 30) {print substr($0, 0, 31)"…"} else print $0}')"
 fi
 
 # Foreground color formatting tags are optional

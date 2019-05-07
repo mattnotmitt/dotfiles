@@ -1,5 +1,6 @@
+source ~/.profile
 # oh-my-zsh {{{
-export ZSH=/home/matt/.oh-my-zsh
+export ZSH=/home/mitt/.oh-my-zsh
 plugins=(
   git
 )
