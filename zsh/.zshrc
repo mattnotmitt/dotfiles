@@ -62,6 +62,8 @@ test -r /home/matt/.opam/opam-init/init.zsh && . /home/matt/.opam/opam-init/init
 # fnm
 export PATH=$HOME/.fnm:$PATH
 eval `fnm env`
-# colorls
-source $(dirname $(gem which colorls))/tab_complete.sh
 #}}}
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/mitt/.sdkman"
+[[ -s "/home/mitt/.sdkman/bin/sdkman-init.sh" ]] && source "/home/mitt/.sdkman/bin/sdkman-init.sh"

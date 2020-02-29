@@ -1,5 +1,5 @@
 Xft.dpi: 110
-
+Xcursor.size: 32
 ! special
 *.foreground:   #abb2bf
 *.background:   #282c34

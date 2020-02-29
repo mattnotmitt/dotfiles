@@ -9,11 +9,11 @@ else
   screenxoffset=$(xrandr | grep "$SCREEN" | cut -d' ' -f3 | grep -oP '(?<=\+)\d+(?=\+)')
   screenyoffset=$(xrandr | grep "$SCREEN" | cut -d' ' -f3 | grep -oP '(?<=\+)\d+$')
 fi
-left=$(bc <<< "50 + $screenxoffset")
-top=$(bc <<< "130 + $screenyoffset")
+left=$(bc <<< "10 + $screenxoffset")
+top=$(bc <<< "10 + $screenyoffset")
 
 destroypopup() {
-  pkill -f "n30f.*bg-player\.png"
+  pkill -f "n30f.*bg-player-small\.png"
   pkill -f "n30f.*albumart\.png"
   killall -q lemonbar
   pkill -f "^sh.*music\.sh"
@@ -43,18 +43,18 @@ drawpopup() {
   volume=$(pamixer --get-volume)
   volumebar="Vol: $volume $(~/.scripts/progress $volume)"
 
-  WIDTH=284 HEIGHT=284 ../getalbumart
+  WIDTH=142 HEIGHT=142 ../getalbumart
 
-  n30f -x "$left" -y "$top" ~/.scripts/popup/bg-player.png&
+  n30f -x "$left" -y "$top" ~/.scripts/popup/bg-player-small.png&
   sleep 0.1
-  n30f -x $(bc <<< "$left + 13") -y $(bc <<< "$top + 13") /tmp/albumart.png&
+  n30f -x $(bc <<< "$left + 6") -y $(bc <<< "$top + 6") /tmp/albumart.png&
 
-  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="860x48+$(bc <<< "$left + 312")+$(bc <<< "$top + 20")" ./popup.sh "%{c}$artist"&
-  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="860x48+$(bc <<< "$left + 312")+$(bc <<< "$top + 68")" ./popup.sh "%{c}$track"&
-  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="860x48+$(bc <<< "$left + 312")+$(bc <<< "$top + 116")" ./popup.sh "%{c}$album"&
+  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="430x24+$(bc <<< "$left + 156")+$(bc <<< "$top + 10")" ./popup.sh "%{c}$artist"&
+  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="430x24+$(bc <<< "$left + 156")+$(bc <<< "$top + 34")" ./popup.sh "%{c}$track"&
+  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="430x24+$(bc <<< "$left + 156")+$(bc <<< "$top + 58")" ./popup.sh "%{c}$album"&
 
-  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="860x48+$(bc <<< "$left + 312")+$(bc <<< "$top + 180")" ./popup.sh "%{c}$controltext"&
-  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="860x48+$(bc <<< "$left + 312")+$(bc <<< "$top + 232")" ./popup.sh "%{c}$volumebar"&
+  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="430x24+$(bc <<< "$left + 156")+$(bc <<< "$top + 90")" ./popup.sh "%{c}$controltext"&
+  DURATION="unlimited" BG="#00000000" OVERLAY="true" GEOMETRY="430x24+$(bc <<< "$left + 156")+$(bc <<< "$top + 116")" ./popup.sh "%{c}$volumebar"&
   sleep 4.9
   destroypopup
 }
@@ -69,7 +69,7 @@ fi
 
 sleep 0.1
 
-if [ -z $(pgrep -f "n30f.*bg-player\.png") ]; then
+if [ -z $(pgrep -f "n30f.*bg-player-small\.png") ]; then
   drawpopup
 else
   destroypopup
