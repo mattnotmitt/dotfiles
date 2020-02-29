@@ -3,7 +3,7 @@
 sxhkd &
 #~/.fehbg &
 ~/.config/polybar/launch.sh &
-#killall -q compton; compton -b &
+killall -q compton; compton -b &
 udiskie &
 ~/.scripts/floating &
 #libinput-gestures-setup start &
@@ -31,4 +31,4 @@ bspc rule -a jetbrains-clion desktop=^4
 bspc rule -a code-oss desktop=^4
 bspc rule -a spotify desktop=^5
 bspc rule -a firefox:Toolkit state=floating sticky=on rectangle=720x405+2710+1025
-
+bspc rule -a zathura state=tiled
