@@ -62,12 +62,13 @@
 	module-margin-left = 2
 
 	font-N = <fontconfig pattern>;<vertical offset>
-	font-0 = Operator Mono Medium:pixelsize=9;5
+	font-0 = JetBrains Mono Medium:pixelsize=8;5
 	font-2 = Font Awesome 5 Brands Regular:pixelsize=10;6
 	font-3 = Font Awesome 5 Pro Regular:pixelsize=8;6
 	font-1 = Noto Sans Mono CJK JP Regular:pixelsize=9;6
+	font-4 = Font Awesome 5 Pro Light:pixelsize=8;6
 
-	modules-left   = workspaces spotify pulseaudio
+	modules-left   = workspaces spotify pulseaudio polypomo
 	;modules-center = xwindow
 	modules-right  = backlight essid battery date
 
@@ -161,8 +162,9 @@
 	animation-charging-2 = 
 	animation-charging-3 = 
 	animation-charging-4 = 
-	animation-charging-framerate = 750	
-	animation-charging-font = 2	
+	animation-charging-5 = 
+	animation-charging-framerate = 250	
+	animation-charging-font = 5
 
 	label-charging            = %percentage%%
 	label-charging-background = ${colors.modules_bg}
@@ -175,7 +177,7 @@
 	ramp-capacity-background = ${colors.cpu_p_bg}
 	ramp-capacity-foreground = ${colors.modules_prefix_fg}
 	ramp-capacity-padding    = 1
-	ramp-capacity-font = 2
+	ramp-capacity-font = 5
 
 	ramp-capacity-0 = 
 	ramp-capacity-1 = 
@@ -313,7 +315,10 @@
 
 	format-connected = "<ramp-signal><label-connected>"
 
-	ramp-signal-0            = 
+	ramp-signal-0		= 
+	ramp-signal-1		= 
+	ramp-signal-2           = 
+
 	#format-connected-prefix-padding    = 1
 	#format-connected-prefix-background = ${colors.essid_p_bg}
 	#format-connected-prefix-foreground = ${colors.modules_prefix_fg}
@@ -332,7 +337,7 @@
 
 	format-disconnected = <label-disconnected>
 
-	format-disconnected-prefix            = 
+	format-disconnected-prefix            = 
 	format-disconnected-prefix-padding    = 1
 	format-disconnected-prefix-background = ${colors.essid_p_bg}
 	format-disconnected-prefix-foreground = ${colors.modules_prefix_fg}
@@ -343,17 +348,12 @@
 	label-disconnected-foreground = ${colors.modules_fg}
 	label-disconnected-padding    = 0
 
-	format-packetloss = <animation-packetloss><label-connected>
-	
-	animation-packetloss-0 = 
-	
-	animation-packetloss-padding = 1
-	animation-packetloss-background = ${colors.essid_p_bg}
-	animation-packetloss-foreground = ${colors.modules_prefix_fg}
-	animation-packetloss-font = 2
-
-	animation-packetloss-framerate = 30000
-	
+	format-packetloss = "<animation-packetloss><label-connected>"
+	animation-packetloss-0 = 
+	animation-packetloss-0-background    	= ${colors.essid_p_bg}
+        animation-packetloss-0-foreground    	= ${colors.modules_prefix_fg}
+        animation-packetloss-0-padding       = 1
+        animation-packetloss-0-font          = 2
 
 
 [module/down]
@@ -391,7 +391,7 @@
 	wrapping-scroll = false
 	strip-wsnumbers = true
 	ws-icon-0 = music;
-	ws-icon-1 = firefox;
+	ws-icon-1 = firefox;
 	ws-icon-2 = discord;
 	ws-icon-3 = term;
 	ws-icon-4 = code;
@@ -491,3 +491,17 @@
 	format-prefix-foreground = ${colors.modules_prefix_fg}
 	format-prefix-padding = 1
 	format-prefix-font = 4
+
+[module/polypomo]
+type = custom/script
+
+exec = polypomo
+tail = true
+
+label = %output%
+label-background = ${colors.modules_bg}
+click-left = polypomo toggle
+click-right = polypomo end
+click-middle = polypomo lock
+scroll-up = polypomo time +60
+scroll-down = polypomo time -60

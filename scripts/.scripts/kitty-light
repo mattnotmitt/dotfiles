@@ -1,0 +1,2 @@
+#!/bin/bash
+kitty -c ~/.config/kitty/kitty.conf -c ~/.config/kitty/kitty-light.conf
