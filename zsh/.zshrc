@@ -91,16 +91,9 @@ alias splay="tmux switch -t play"
 neofetch
 #}}}
 
-# Configure Things {{{
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-# opam configuration
-test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # fnm
-export PATH=$HOME/.fnm:$PATH
-eval `fnm env`
+#export PATH=$HOME/.fnm:$PATH
+#eval `fnm env`
 #}}}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
