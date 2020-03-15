@@ -1,5 +1,6 @@
+source ~/.profile
 # oh-my-zsh {{{
-export ZSH=/home/matt/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 plugins=(
   git
 )
@@ -98,20 +99,13 @@ alias splay="tmux switch -t play"
 neofetch
 #}}}
 
-# Configure Things {{{
-# added by travis gem
-[ -f /home/matt/.travis/travis.sh ] && source /home/matt/.travis/travis.sh
-
-# opam configuration
-test -r /home/matt/.opam/opam-init/init.zsh && . /home/matt/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
 # fnm
-export PATH=$HOME/.fnm:$PATH
-eval `fnm env`
+#export PATH=$HOME/.fnm:$PATH
+#eval `fnm env`
 #}}}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/matt/.sdkman"
-[[ -s "/home/matt/.sdkman/bin/sdkman-init.sh" ]] && source "/home/matt/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-[[ -s "/home/matt/.gvm/scripts/gvm" ]] && source "/home/matt/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
