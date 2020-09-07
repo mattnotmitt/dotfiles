@@ -8,6 +8,7 @@ WIDTH=623 HEIGHT=200 ../batgraph
 
 power=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk -F'[[:space:]][[:space:]]+' '/percentage/ { print $3 }')
 state=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk -F'[[:space:]][[:space:]]+' '/state/ { print $3 }')
+echo $state
 timeremaining=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk -F'[[:space:]][[:space:]]+' '/(time to empty|time to full)/ { print $3 }')
 
 if [ "$state" == "discharging" ]; then

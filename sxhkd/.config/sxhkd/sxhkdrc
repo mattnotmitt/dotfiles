@@ -162,6 +162,6 @@ super + shift + i
 	betterlockscreen -l dimblur -t "$(fortune -s -n 21)"
 
 Print
-	teiler --quick image
+	teiler --quick image area
 super + Print
 	teiler --togglecast

@@ -148,7 +148,7 @@
 	type          = internal/battery
 	full-at       = 99
 	battery       = BAT0
-	adapter       = AC0
+	adapter       = ADP1
 	poll-interval = 5
 
 	format-charging = <animation-charging><label-charging>
@@ -163,7 +163,7 @@
 	animation-charging-3 = 
 	animation-charging-4 = 
 	animation-charging-5 = 
-	animation-charging-framerate = 250	
+	animation-charging-framerate = 1000
 	animation-charging-font = 5
 
 	label-charging            = %percentage%%
@@ -202,7 +202,7 @@
 	label-full-foreground = ${colors.modules_fg}
 	label-full-padding    = 1
 
-	click-left = sh /home/matt/scripts/popup/bat.sh
+	click-left = sh /home/matt/.scripts/popup/bat.sh
 
 [module/alsa]
 	type          = internal/alsa

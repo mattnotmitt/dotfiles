@@ -1,4 +1,3 @@
-source ~/.profile
 # oh-my-zsh {{{
 export ZSH=$HOME/.oh-my-zsh
 plugins=(
@@ -99,13 +98,15 @@ alias splay="tmux switch -t play"
 neofetch
 #}}}
 
-# fnm
-#export PATH=$HOME/.fnm:$PATH
-#eval `fnm env`
-#}}}
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+export PATH=$PATH:$HOME/.fnm
+eval "$(fnm env --multi --use-on-cd --shell=zsh)"
+
+# fnm
+export PATH=/home/matt/.fnm:$PATH
+eval "`fnm env --multi`"

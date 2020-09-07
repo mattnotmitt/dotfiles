@@ -346,13 +346,13 @@
 #    summary = *twitter.com*
 #    urgency = normal
 #
-[spotify]
-	appname = Spotify
-	script = /home/matt/.scripts/popup/music.sh
+[power]
+	summary = Battery status
+	script = /home/matt/.scripts/statebat.sh
+	msg_urgency = low
 	format = ""
-
-[volume]
-	appname = volume
-	format = "<span font="Font Awesome 5 Pro Solid 10" rise="7000">%s</span><span rise="14000">%b</span>"
-# vim: ft=cfg
+#[spotify]
+#	appname = Spotify
+#	script = /home/matt/.scripts/popup/music.sh
+#	format = ""
 

@@ -30,8 +30,8 @@ barh="$HEIGHT"
 [ -z $FG ] && FG='#ffabb2bf'
 
 # font used
-bar_font="IBMPlexMonoMedium-9"
-icon_font='FontAwesome5ProRegular-9'
+bar_font="IBMPlexMonoMedium-8"
+icon_font='FontAwesome5ProRegular-8'
 
 
 [ ! -z $OVERLAY ] && NAME="panel_overlay"

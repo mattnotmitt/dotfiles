@@ -1,4 +1,5 @@
 Xft.dpi: 288
+Xcusror.size: 32
 
 ! special
 *.foreground:   #abb2bf
