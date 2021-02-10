@@ -1,3 +1,5 @@
+export PATH=$PATH:$HOME/.local/bin
+
 # oh-my-zsh {{{
 export ZSH=$HOME/.oh-my-zsh
 plugins=(
@@ -68,7 +70,7 @@ export SPACESHIP_PROMPT_ORDER=(
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
-  kubecontext   # Kubectl context section
+#  kubecontext   # Kubectl context section
   line_sep      # Line break
   battery       # Battery level and status
   vi_mode       # Vi-mode indicator
@@ -104,9 +106,17 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
-export PATH=$PATH:$HOME/.fnm
-eval "$(fnm env --multi --use-on-cd --shell=zsh)"
-
 # fnm
-export PATH=/home/matt/.fnm:$PATH
-eval "`fnm env --multi`"
+export PATH=/home/mcoomber/.fnm:$PATH
+eval "`fnm env --use-on-cd --shell=zsh`"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# Start Docker daemon automatically when logging in if not running.
+RUNNING=`ps aux | grep dockerd | grep -v grep`
+if [ -z "$RUNNING" ]; then
+    sudo dockerd > /dev/null 2>&1 &
+    disown
+fi
+
+export SCREENDIR="$HOME/.screen"
