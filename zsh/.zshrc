@@ -68,7 +68,7 @@ export SPACESHIP_PROMPT_ORDER=(
   pyenv         # Pyenv section
   dotnet        # .NET section
   ember         # Ember.js section
-  kubecontext   # Kubectl context section
+#  kubecontext   # Kubectl context section
   line_sep      # Line break
   battery       # Battery level and status
   vi_mode       # Vi-mode indicator
@@ -105,8 +105,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 export PATH=$PATH:$HOME/.fnm
-eval "$(fnm env --multi --use-on-cd --shell=zsh)"
+eval "$(fnm env --use-on-cd --shell=zsh)"
 
-# fnm
-export PATH=/home/matt/.fnm:$PATH
-eval "`fnm env --multi`"
