@@ -23,7 +23,6 @@ zplug "zsh-users/zsh-autosuggestions", from:github
 zplug "zsh-users/zsh-completions", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug load
 # }}}
 
 # Env/Alias {{{
@@ -43,6 +42,12 @@ alias llfu='exa -bghHliS --git'
 # }}}
 
 # spaceship prompt {{{
+
+export SPACESHIP_CHAR_SYMBOL="$"
+export SPACESHIP_CHAR_SYMBOL_ROOT="§"
+export SPACESHIP_CHAR_SUFFIX=" "
+export SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+
 export SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
@@ -65,13 +70,9 @@ export SPACESHIP_PROMPT_ORDER=(
   aws           # Amazon Web Services section
   venv          # virtualenv section
   conda         # conda virtualenv section
-  pyenv         # Pyenv section
   dotnet        # .NET section
-  ember         # Ember.js section
-  kubecontext   # Kubectl context section
   line_sep      # Line break
   battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
   char          # Prompt character
 )
 export SPACESHIP_RPROMPT_ORDER=(
@@ -79,12 +80,9 @@ export SPACESHIP_RPROMPT_ORDER=(
   exec_time
   jobs
 )
-export SPACESHIP_CHAR_SYMBOL="$"
-export SPACESHIP_CHAR_SUFFIX=" "
-export SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
-export SPACESHIP_PACKAGE_SYMBOL=" "
-export SPACESHIP_NODE_SYMBOL=" "
-export SPACESHIP_GOLANG_SYMBOL="ﳑ "
+#export SPACESHIP_PACKAGE_SYMBOL=" "
+#export SPACESHIP_NODE_SYMBOL=" "
+#export SPACESHIP_GOLANG_SYMBOL="ﳑ "
 # }}}
 
 # tmux {{{
@@ -104,9 +102,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
-export PATH=$PATH:$HOME/.fnm
-eval "$(fnm env --multi --use-on-cd --shell=zsh)"
-
 # fnm
-export PATH=/home/matt/.fnm:$PATH
-eval "`fnm env --multi`"
+export PATH="/Users/mitt/Library/Application Support/fnm:$PATH"
+eval "`fnm env`"
+
+zplug load

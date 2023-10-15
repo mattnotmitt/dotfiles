@@ -10,8 +10,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'chrisbra/Colorizer'
-	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-	Plug 'lervag/vimtex'
 call plug#end()
 let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
