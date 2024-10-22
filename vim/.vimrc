@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 	Plug 'lervag/vimtex'
 call plug#end()
-let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:colorizer_auto_color = 1
 let g:polyglot_disabled = ['latex']
